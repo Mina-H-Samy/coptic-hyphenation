@@ -1,0 +1,94 @@
+# Words written out the way they must break, one per line; "-" marks a break.
+# The first blocks are the starting cases, all real words from the Coptic
+# liturgical texts. A line holding a whole phrase is hyphenated
+# as running text.
+
+# The jinkim letters are syllables of their own.
+ⲙ̀-ⲫⲣⲏϯ
+ⲙ̀-ⲙⲱⲟⲩ
+ⲛ̀-ⲥⲏⲟⲩ
+ⲛ̀-ⲟⲩⲱⲧ
+ⲛ̀-ⲧⲉϥⲭⲁ
+
+# A word-opening prefix detaches, and is never split itself.
+ⲡⲓ-ⲕⲁϩⲓ
+ⲛⲓ-ⲉ-ⲛⲉϩ
+ⲡⲉⲛ-ⲓⲱⲧ
+ⲛⲉⲛ-ⲛⲟⲃⲓ
+ⲡⲉⲛ-ⲛⲟⲩϯ
+
+# ϯ is a whole syllable, so it may stand alone before the break.
+ϯ-ⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ
+ϯ-ⲙⲉ-ⲧⲟⲩⲣⲟ
+
+# The indefinite articles detach.
+ϩⲁⲛ-ⲙⲏϣ
+ⲟⲩ-ⲙⲉⲑ-ⲙⲏⲓ
+ⲟⲩ-ⲛⲟⲩϯ
+
+# A prefix breaks where nothing else would.
+ⲛⲏ-ⲉⲧⲭⲏ
+ⲫⲏ-ⲉ-ⲑⲟⲩⲁⲃ
+
+# A consonant run gives the next syllable the longest onset that may start one.
+ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ
+ⲁⲗ-ⲗⲏ-ⲗⲟⲩⲓⲁ
+ⲡⲉⲛ-ⲥⲱ-ⲧⲏⲣ
+ⲡⲓ-ⲡⲛⲉⲩⲙⲁ
+ⲧⲉ-ⲧⲉⲛ-ϣⲧⲉ-ⲙⲉⲣ-ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ
+
+# A single consonant between vowels starts the next syllable.
+ⲓⲏ-ⲥⲟⲩⲥ
+ⲡⲓ-ⲉ-ϩⲟⲟⲩ
+
+# Short words and word edges are left alone.
+ⲛⲉⲙ
+ϧⲉⲛ
+ⲁⲙⲏⲛ
+ⲉⲑⲟⲩⲁⲃ
+
+# Running text.
+ⲡⲓ-ⲕⲁϩⲓ, ⲡⲓ-ⲕⲁϩⲓ.
+ϧⲉⲛ ⲫⲣⲁⲛ ⲙ̀-ⲫⲓⲱⲧ ⲛⲉⲙ ⲡϣⲏⲣⲓ
+
+# Decided in this repository, 2026-11-20.
+# A one-letter article goes with its noun.
+ⲙ̀-ⲫⲛⲟⲩϯ
+ⲙ̀-ⲡϭⲟⲓⲥ
+ⲙ̀-ⲡϣⲏⲣⲓ
+ⲙ̀-ⲡⲕⲁϩⲓ
+ⲙ̀-ⲫⲙⲟⲩ
+ⲙ̀-ⲡⲥⲧⲁⲩ-ⲣⲟⲥ
+ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ
+ⲛ̀-ϯⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ
+ⲉ̀-ϯⲡⲉⲧⲣⲁ
+# A one-letter subject pronoun goes with what precedes it.
+ⲁϥ-ⲧⲱⲛϥ
+ⲁϥ-ⲣⲉⲕ
+ⲁⲕ-ⲗⲉⲥ
+ⲁⲥ-ⲙⲟⲩ
+# The jinkim makes ⲉ̀ a syllable by itself.
+ⲉ̀-ⲡϣⲱⲓ
+ⲉ̀-ⲧⲫⲉ
+ⲉ̀-ⲃⲟⲗ
+ⲁϥ-ⲉ̀ⲙⲓ
+# Without its jinkim, the preposition ⲉ detaches before the article ⲡ or ⲫ,
+# but not before ⲧ or ⲑ, where ⲉⲧ-/ⲉⲑ- is the relative.
+ⲉ-ⲡϣⲱⲓ
+ⲉ-ⲫⲙⲁ
+ⲉⲑ-ⲛⲏⲟⲩ
+# The jinkim makes ϣ̀ a syllable by itself.
+ⲁϥ-ϣ̀-ⲧⲉⲙ-ϫⲓⲙⲓ
+ⲛ̀-ⲧⲉ-ⲧⲉⲛ-ϣ̀-ⲧⲉⲙ-ⲥⲁϫⲓ
+ⲉ̀-ϣ̀-ⲧⲉⲙ
+ϣ̀-ϫⲟⲙ
+# No piece is left without a vowel: a lone consonant joins what follows after
+# a prefix or a syllabic unit, otherwise what precedes.
+ⲡⲓ-ϣⲗⲟⲗ
+ⲛⲓ-ϭⲗⲁⲡ
+ⲛ̀-ⲕⲣⲓ-ⲧⲏⲥ
+ⲡⲓ-ⲥⲧⲣⲁ-ⲧⲏ-ⲗⲁ-ⲧⲏⲥ
+ⲡⲉϥ-ⲙ̀-ⲃⲟⲛ
+ⲉⲣⲉ-ⲧⲉⲛ-ⲉ̀-ϣⲱⲧ
+ⲙ̀-ⲡⲣⲉⲙ-ⲛ̀-ⲭⲏⲙⲓ
+ⲡⲓⲭⲣ︦ⲥ︦
