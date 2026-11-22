@@ -19,7 +19,7 @@
 
 # ϯ is a whole syllable, so it may stand alone before the break.
 ϯ-ⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ
-ϯ-ⲙⲉ-ⲧⲟⲩⲣⲟ
+ϯ-ⲙⲉⲧ-ⲟⲩⲣⲟ
 
 # The indefinite articles detach.
 ϩⲁⲛ-ⲙⲏϣ
@@ -59,7 +59,7 @@
 ⲙ̀-ⲡⲕⲁϩⲓ
 ⲙ̀-ⲫⲙⲟⲩ
 ⲙ̀-ⲡⲥⲧⲁⲩ-ⲣⲟⲥ
-ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ
+ⲛ̀-ϯ-ⲙⲉⲑ-ⲙⲏⲓ
 ⲛ̀-ϯⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ
 ⲉ̀-ϯⲡⲉⲧⲣⲁ
 # A one-letter subject pronoun goes with what precedes it.
@@ -105,7 +105,7 @@
 # On any other letter it is a plain mark.
 ⲙⲱⲩ̀-ⲥⲏⲥ
 ⲥ̀ⲛⲟⲩϯ
-ⲧⲉⲕⲥ̀-ϩⲓⲙⲓ
+ⲧⲉⲕ-ⲥ̀ϩⲓⲙⲓ
 # An article with a jinkim stays with its noun: a break may fall before it,
 # never after it.
 ϫⲉⲙ-ⲡ̀ϣⲓⲛⲓ
@@ -115,3 +115,46 @@
 ⲙ̀-ⲫ̀ⲣⲏϯ
 ⲙ̀-ⲡ̀ⲕⲁϩⲓ
 ⲡ̀ⲟⲩⲣⲟ
+
+# ⲙⲉⲧ is a syllable of its own wherever it stands, before a consonant or a
+# vowel, and wins over the article rule; ⲙⲉⲑ before a consonant too.
+ⲉϯ-ⲙⲉⲧ-ⲣⲱⲙⲓ
+ϯ-ⲙⲉⲑ-ⲙⲏⲓ
+ⲟⲩ-ⲙⲉⲧ-ⲁⲧ-ⲥⲃⲱ
+ⲧⲉⲕ-ⲙⲉⲧ-ⲁ-ⲅⲁ-ⲑⲟⲥ
+ⲡⲓ-ⲙⲉⲧ-ⲣⲉϥ-ϣⲉⲙϣⲓ
+ⲉⲣ-ⲙⲉⲑⲣⲉ
+# Greek words with the same letters break as Greek.
+ϯ-ⲙⲉ-ⲧⲁ-ⲛⲟⲓⲁ
+ⲉⲣ-ⲙⲉ-ⲧⲁ-ⲛⲟⲓⲛ
+ⲉⲩ-ⲙⲉ-ⲧⲁ-ⲗⲩⲙ-ⲯⲓⲥ
+# The possessives ⲡⲉⲕ ⲡⲉϥ ⲡⲉⲥ ⲧⲉⲕ ⲧⲉϥ ⲧⲉⲥ ⲛⲉⲕ ⲛⲉϥ ⲛⲉⲥ keep their possessor,
+# wherever they stand; the relative ⲉⲧⲉ with a pronoun is not touched.
+ⲡⲉⲕ-ⲗⲁⲟⲥ
+ⲙ̀-ⲡⲉⲥ-ⲃⲓⲟⲥ
+ⲛ̀-ⲛⲉⲥ-ⲡⲩⲗⲏ
+ⲡⲉϥ-ⲧϩⲉⲙⲕⲟ
+ⲉⲧⲉϥ-ⲛⲁ-ⲑⲁ-ⲙⲓⲟϥ
+# A conjugation base keeps its pronoun at the start of a word; Greek words that
+# open with the same letters do not.
+ⲁⲥ-ⲧⲱⲛⲥ
+ⲁⲥ-ⲧⲏⲓϥ
+ⲉⲧⲁⲥ-ⲕⲏⲛ
+ⲁⲥⲧⲏⲣ
+ⲁⲥⲡⲁ-ⲍⲉⲥⲑⲉ
+# Consonant pairs decided together: an article with its noun, ϯ with what
+# follows, the start of a native stem, a Greek onset.
+ⲉⲣⲉ-ⲡϭⲟⲓⲥ
+ϩⲓ-ⲧⲉⲛ-ⲧⲫⲉ
+ⲁⲩ-ϯϩⲟ
+ⲁϥ-ϯⲙⲁϯ
+ⲁⲩ-ϯⲧⲟⲧϥ
+ⲉⲧⲁϥ-ⲑⲣⲉ
+ⲛⲉⲕ-ϣⲫⲏⲣ
+ⲁϥ-ⲥϧⲁⲓ
+ⲁϥ-ϫⲫⲉ
+ⲁⲩ-ϭⲣⲟ
+ⲡⲓ-ⲡⲣⲟ-ⲫⲏ-ⲧⲏⲥ
+ϯ-ⲉⲕ-ⲕⲗⲏ-ⲥⲓⲁ
+ⲁⲛ-ⲇⲣⲉⲁⲥ
+ⲡⲁ-ⲣⲁ-ⲕⲗⲏ-ⲥⲓⲥ

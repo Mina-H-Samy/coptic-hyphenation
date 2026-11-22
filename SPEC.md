@@ -4,9 +4,11 @@
 work started from. Version 1 starts the onset list again from nothing and adds
 the decisions of 2026-11-20: ⲉ̀ and ϣ̀ as syllabic units, the prefix ⲉ before an
 article, the article rule (R3) and the rule that no piece is left without a
-vowel (R6); and of 2026-11-22: ⲓ̀ and ⲁ̀ as syllabic units, and an article
-written with a jinkim kept with its noun. It is not yet the proposed standard: section 7 lists the decisions
-still open, and section 6 the problems they have to settle.
+vowel (R6); and of 2026-11-22: ⲓ̀ and ⲁ̀ as syllabic units, an article written
+with a jinkim kept with its noun, ⲙⲉⲧ, the possessives and the pronoun after a
+conjugation base (R2), and the first decided onset pairs (R4). It is not yet the
+proposed standard: section 7 lists the decisions still open, and section 6 the
+problems they have to settle.
 
 The rules themselves are data, in [`rules/coptic.toml`](rules/coptic.toml).
 [`coptic_hyphenation/reference.py`](coptic_hyphenation/reference.py) carries
@@ -54,15 +56,35 @@ Orthodox Church. Other dialects are an open decision (D6).
 > ⲙ̀-ⲫⲣⲏϯ, ⲛ̀-ⲥⲏⲟⲩ, ⲛ̀-ⲟⲩⲱⲧ, ⲛ̀-ⲧⲉϥⲭⲁ, ⲉ̀-ⲃⲟⲗ, ⲁϥ-ⲉ̀ⲙⲓ, ⲁϥ-ϣ̀-ⲧⲉⲙ-ϫⲓⲙⲓ,
 > ϣ̀-ϫⲟⲙ, ⲁϥ-ⲓ̀ⲛⲓ, ⲛ̀-ⲛⲉϥ-ⲓ̀ⲃⲓ, ⲁ̀-ⲛⲟⲕ, ⲡⲉϥ-ⲁ̀-ϣⲁⲓ; but ⲙⲱⲩ̀-ⲥⲏⲥ, ⲥ̀ⲛⲟⲩϯ
 
-**R2. Prefixes.** If a word begins with one of the prefixes in the rules file
-(ⲡⲓ, ϯ, ⲛⲓ, ⲟⲩ, ϩⲁⲛ, ⲫⲏ, ⲛⲏ, ⲡⲉⲛ, ⲧⲉⲛ, ⲛⲉⲛ) and more follows, a break may
-fall after the longest one that matches, and R4 makes no break inside it. The
+**R2. Prefixes.** A prefix is a morpheme the rules file lists. Where one
+stands and more follows, a break may fall after it, with one unit before the
+break (R5), and R4 makes no break inside it. There are two kinds.
+
+*At the start of a word*: the articles ⲡⲓ, ϯ, ⲛⲓ, ⲟⲩ, ϩⲁⲛ, ⲫⲏ, ⲛⲏ, the
+possessives ⲡⲉⲛ, ⲧⲉⲛ, ⲛⲉⲛ, and a conjugation base with the pronoun ⲕ or ⲥ (ⲁⲕ,
+ⲁⲥ, ⲉⲕ, ⲉⲥ, ϣⲁⲕ, ϣⲁⲥ, ⲛⲁⲕ, ⲛⲁⲥ, ⲉⲧⲁⲕ, ⲉⲧⲁⲥ) before a consonant, which keeps
+the pronoun with its base. Only the longest that matches counts. The
 preposition ⲉ written without its jinkim is a prefix only before ⲡ or ⲫ and a
 consonant, where it can only be ⲉ + article: before ⲧ or ⲑ an unmarked ⲉⲧ- or
 ⲉⲑ- is nearly always the relative or ⲉⲑⲃⲉ.
 
-> ⲡⲓ-ⲕⲁϩⲓ, ϩⲁⲛ-ⲙⲏϣ, ⲡⲉⲛ-ⲓⲱⲧ (never ⲡⲉ-ⲛⲓⲱⲧ), ⲛⲏ-ⲉⲧⲭⲏ, ⲉ-ⲡϣⲱⲓ, ⲉ-ⲫⲙⲁ; but
-> ⲉⲑ-ⲛⲏⲟⲩ
+> ⲡⲓ-ⲕⲁϩⲓ, ϩⲁⲛ-ⲙⲏϣ, ⲡⲉⲛ-ⲓⲱⲧ (never ⲡⲉ-ⲛⲓⲱⲧ), ⲛⲏ-ⲉⲧⲭⲏ, ⲉ-ⲡϣⲱⲓ, ⲉ-ⲫⲙⲁ,
+> ⲁⲕ-ⲗⲉⲥ, ⲁⲥ-ⲧⲱⲛⲥ, ⲉⲧⲁⲥ-ⲕⲏⲛ; but ⲉⲑ-ⲛⲏⲟⲩ
+
+*Anywhere in a word*: ⲙⲉⲧ, the prefix of abstract nouns, is a syllable of its
+own wherever it stands, before a consonant or a vowel, with a break before it
+and after it; before a consonant it may be written ⲙⲉⲑ. It wins over the
+article rule (R3). The possessives with a one-consonant possessor, ⲡⲉⲕ, ⲡⲉϥ,
+ⲡⲉⲥ, ⲧⲉⲕ, ⲧⲉϥ, ⲧⲉⲥ, ⲛⲉⲕ, ⲛⲉϥ, ⲛⲉⲥ, keep the possessor before a consonant,
+wherever they stand; they add a break only after themselves, because the same
+letters also end the relative ⲉⲧⲉ- with a pronoun.
+
+> ⲉϯ-ⲙⲉⲧ-ⲣⲱⲙⲓ, ϯ-ⲙⲉⲧ-ⲟⲩⲣⲟ, ⲟⲩ-ⲙⲉⲧ-ⲁⲧ-ⲥⲃⲱ, ⲛ̀-ϯ-ⲙⲉⲑ-ⲙⲏⲓ; ⲡⲉⲕ-ⲗⲁⲟⲥ,
+> ⲙ̀-ⲡⲉⲥ-ⲃⲓⲟⲥ, ⲛ̀-ⲛⲉⲥ-ⲡⲩⲗⲏ; but ⲉⲧⲉϥ-ⲛⲁ-ⲑⲁ-ⲙⲓⲟϥ
+
+A Greek word or name that holds the same letters is listed with its prefix as
+an exception, and breaks as if the prefix were not there: ϯ-ⲙⲉ-ⲧⲁ-ⲛⲟⲓⲁ,
+ⲉⲩ-ⲙⲉ-ⲧⲁ-ⲗⲩⲙ-ⲯⲓⲥ, ⲁⲥⲧⲏⲣ, ⲁⲥⲡⲁ-ⲍⲉⲥⲑⲉ.
 
 **R3. Articles.** When the consonants that follow a syllabic unit or a
 word-initial prefix begin with a one-letter article, they all go with the next
@@ -70,8 +92,8 @@ syllable: the article stays with its noun, and R4 makes no break among them.
 A one-letter subject pronoun needs no rule of its own: R4 already splits after
 it.
 
-> ⲙ̀-ⲫⲛⲟⲩϯ, ⲙ̀-ⲡϭⲟⲓⲥ, ⲉ̀-ⲡϣⲱⲓ, ⲙ̀-ⲡⲥⲧⲁⲩ-ⲣⲟⲥ, ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ; and the pronouns
-> ⲁϥ-ⲧⲱⲛϥ, ⲁⲕ-ⲗⲉⲥ
+> ⲙ̀-ⲫⲛⲟⲩϯ, ⲙ̀-ⲡϭⲟⲓⲥ, ⲉ̀-ⲡϣⲱⲓ, ⲙ̀-ⲡⲥⲧⲁⲩ-ⲣⲟⲥ, ⲛ̀-ϯⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ; and the
+> pronouns ⲁϥ-ⲧⲱⲛϥ, ⲁⲕ-ⲗⲉⲥ
 
 A pattern cannot tell the article ϯ from the pronoun ϯ- "I" or the verb ϯ
 "give", so these lose the break after ϯ too (ⲉ̀-ϯⲛⲁϣⲉ, ⲉ̀-ϯϩⲁⲡ). No wrong break
@@ -96,16 +118,29 @@ break, and two vowels side by side are never separated.
 > ⲡⲓ-ⲡⲛⲉⲩⲙⲁ, ⲧⲉ-ⲧⲉⲛ-ϣⲧⲉ-ⲙⲉⲣ-ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ
 
 The onset list is in the rules file. It was started from nothing on
-2026-11-20 and holds only the six pairs the pinned cases need (ⲭⲣ, ⲥⲧ, ⲡⲛ, ϣⲧ,
-ⲥⲕ, ⲫⲣ), each marked *pinned* until reviewed. Every other pair is to be decided
-on its own, from how it sits in real words. A consonant carrying a mark is
-never part of an onset.
+2026-11-20, and on 2026-11-22 every pair was weighed by where the morphemes
+divide in the words that hold it (Coptic SCRIPTORIUM's divisions, and the
+private corpus where its words occur there too). For each place a pair is the
+last two consonants between two vowels, one choice is right: *together* when a
+morpheme begins with the pair, *apart* when one ends between its letters (a lone
+article counting as the start of what follows, a lone subject pronoun as the
+end of what precedes), inside a Greek morpheme *together* if a Greek word can
+begin with the pair, and inside a native one where a compound prefix such as
+ⲙⲉⲧ, ⲣⲉϥ, ⲁⲧ, ϫⲓⲛ, ⲉⲣ ends or where it splits into two morphemes that occur on
+their own, else *apart* for a run of two. A pair is listed when three quarters
+of its cases want it together. That gives 57 pairs in four groups: the article
+ⲡ, ⲫ or ⲧ with its noun (ⲉⲣⲉ-ⲡϭⲟⲓⲥ), ϯ with what follows (ⲁⲩ-ϯϩⲟ), the start of
+a native stem (ⲛⲉⲕ-ϣⲫⲏⲣ, ⲁϥ-ϫⲫⲉ, ⲉⲧⲁϥ-ⲑⲣⲉ), and a Greek onset (ⲡⲓ-ⲡⲣⲟ-ⲫⲏ-ⲧⲏⲥ,
+ϯ-ⲉⲕ-ⲕⲗⲏ-ⲥⲓⲁ, ⲁⲛ-ⲇⲣⲉⲁⲥ). A pair at a quarter or less is apart, and stays off
+the list. The 49 in between depend on the word (D4); of them, ⲥⲧ and ⲥⲕ stay on
+the list as *pinned* until then. A consonant carrying a mark is never part of
+an onset.
 
 **R5. Minimums.** Counted in units:
 
 - at least 2 units before a break made by R4;
 - at least 1 unit before a break made by R1 or R2 (ϯ-ⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ, ⲉ-ⲡϣⲱⲓ);
-- at least 3 units after any break (ϯ-ⲙⲉ-ⲧⲟⲩⲣⲟ, not ϯ-ⲙⲉ-ⲧⲟⲩ-ⲣⲟ).
+- at least 3 units after any break (ϯ-ⲙⲉⲧ-ⲟⲩⲣⲟ, not ϯ-ⲙⲉⲧ-ⲟⲩ-ⲣⲟ).
 
 > ⲛⲉⲙ, ⲁⲙⲏⲛ and ⲉⲑⲟⲩⲁⲃ have no break; ⲛⲓ-ⲉ-ⲛⲉϩ and ⲫⲏ-ⲉ-ⲑⲟⲩⲁⲃ do.
 
@@ -149,7 +184,8 @@ the old list, most of them exactly this (ϥⲛ, ⲡϫ, ⲡϣ, ⲡϭ). The other 
 in the Coptic Compass dictionary: it is ⲡⲉϥ-, ⲁϥ- and the like joined to a
 stem, and it gives ⲙ̀-ⲡⲉ-ϥⲗⲟ-ⲅⲟⲥ where the word is ⲙ̀ⲡⲉϥ-ⲗⲟⲅⲟⲥ. Stems that do
 begin with an unlisted pair break wrongly: ϫⲫⲟ "beget" gives Ⲁⲥϫ-ⲫⲟϥ for
-Ⲁⲥ-ϫⲫⲟϥ (139 words contain ϫⲫ).
+Ⲁⲥ-ϫⲫⲟϥ (139 words contain ϫⲫ). *Settled 2026-11-22 for 57 pairs* (R4);
+49 remain (D4).
 
 The corpora cannot settle the list by counting. Editions write the same stems
 with and without a jinkim on the first letter: in the Coptic SCRIPTORIUM texts
@@ -160,15 +196,19 @@ why the list is being rebuilt from nothing: for every pair the rule decides,
 the morpheme divisions of Coptic SCRIPTORIUM show how it sits in real words,
 inside one morpheme, opening one, or straddling a morpheme boundary.
 
-**P3. Morphemes inside the word.** R2 knows only word-opening prefixes. Others
-break by syllable: ⲙⲉ-ⲧⲟⲩⲣⲟ (morphemes ⲙⲉⲧ-ⲟⲩⲣⲟ), ⲣⲉ-ϥⲉⲣ-ⲛⲟⲃⲓ (ⲣⲉϥ-ⲉⲣ-ⲛⲟⲃⲓ).
+**P3. Morphemes inside the word.** R2 knew only word-opening prefixes, and
+others broke by syllable: ⲙⲉ-ⲧⲟⲩⲣⲟ (morphemes ⲙⲉⲧ-ⲟⲩⲣⲟ), ⲣⲉ-ϥⲉⲣ-ⲛⲟⲃⲓ
+(ⲣⲉϥ-ⲉⲣ-ⲛⲟⲃⲓ). *Settled 2026-11-22 for ⲙⲉⲧ and the possessives* (R2: ϯ-ⲙⲉⲧ-ⲟⲩⲣⲟ,
+ⲡⲉⲕ-ⲗⲁⲟⲥ). Other inner morphemes, such as ⲣⲉϥ-, still break by syllable.
 
 **P4. Greek loanwords.** Greek onsets such as ⲫⲑ, ⲥⲫ, ⲥⲭ, ⲅⲛ are missing,
 and R4 never keeps three consonants together, so ⲁⲣⲓⲥⲫⲣⲁⲅⲓⲍⲓⲛ breaks as
 ⲁⲣⲓⲥ-ⲫⲣⲁ-ⲅⲓ-ⲍⲓⲛ, where both the Greek division and the morphemes (ⲁⲣⲓ +
 σφραγίζειν) give ⲁⲣⲓ-ⲥⲫⲣⲁ…. The jinkim on a Greek word's first vowel is a
 spelling convention, not a syllable of its own, but R1 cannot tell: ⲧⲁ̀ⲣⲭⲏ
-(the article + ἀρχή) breaks as ⲧⲁ̀-ⲣⲭⲏ, where the Greek is ἀρ-χή.
+(the article + ἀρχή) breaks as ⲧⲁ̀-ⲣⲭⲏ, where the Greek is ἀρ-χή. Where a
+prefix's letters stand in a Greek word, the word is listed as an exception
+(R2); the onset pairs have no such list yet.
 
 **P5. The jinkim on other letters.** Version 0 made only ⲙ̀ and ⲛ̀ syllabic
 units, but in the private corpus the jinkim also stands on ⲉ (in 6,678 distinct
@@ -191,9 +231,12 @@ noun, ϧⲉⲛⲛⲓϫⲟⲙ. The same rules have to give sensible breaks in bot
 
 - **D1.** When syllables and morphemes disagree (P1, P3), which wins? *Decided
   2026-11-20 for the lone letters:* a one-letter article goes with what follows
-  (R3), ϯ included (ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ), and a one-letter subject pronoun with what
-  precedes. Still open: the other kinds of lone letter (prepositions,
-  negations, object pronouns).
+  (R3), ϯ included (ⲛ̀-ϯⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ), and a one-letter subject pronoun with what
+  precedes. *Decided 2026-11-22:* ⲙⲉⲧ is its own syllable everywhere and wins
+  over the article rule (ⲛ̀-ϯ-ⲙⲉⲑ-ⲙⲏⲓ); a possessive keeps its possessor, and a
+  conjugation base at a word's start keeps its pronoun (R2). Still open: the
+  other kinds of lone letter (prepositions, negations, object pronouns), and
+  inner morphemes other than ⲙⲉⲧ (P3).
 - **D2.** Is a letter with a jinkim always a syllable by itself (P5)?
   *Decided:* yes for ⲉ̀ and ϣ̀ (2026-11-20), and for ⲓ̀ and ⲁ̀ (2026-11-22), at
   the cost of a Greek word such as ⲧⲁ̀-ⲣⲭⲏ (P4). On an article (ⲡ̀, ⲫ̀, ⲧ̀,
@@ -205,7 +248,11 @@ noun, ϧⲉⲛⲛⲓϫⲟⲙ. The same rules have to give sensible breaks in bot
   stems.
 - **D4.** *Decided 2026-11-20:* the onset list is rebuilt from nothing, pair
   by pair, from how each pair sits in Coptic SCRIPTORIUM's morpheme divisions
-  (P2). Still open: the pairs themselves.
+  (P2). *Decided 2026-11-22:* 57 pairs together and the rest apart, by the
+  method in R4. Still open: 49 pairs that depend on the word, which no bare
+  pair can settle: ⲥ is a pronoun in ⲁⲥ-ⲙⲟⲩ but starts a stem in ϭⲓ-ⲥⲙⲏ; ⲧ ends
+  ⲉⲧ- or ⲁⲧ- but is the article in ⲧⲥⲁⲣⲝ; Greek ⲭⲣⲓ-ⲥⲧⲟⲥ but native ⲙⲉⲥ-ⲧⲉ. They
+  wait for rules that look at the word.
 - **D5.** No break inside an overlined run, or next to one (P6)?
 - **D6.** Bohairic only, or Coptic as a whole? Sahidic marks a syllabic
   consonant with the superlinear stroke, the same character as the overline of

@@ -99,6 +99,9 @@ class RulesFile(unittest.TestCase):
         self.assertEqual(len(rules.prefixes), len(set(rules.prefixes)))
         for letter in rules.articles:
             self.assertEqual("consonant", h.kind(letter), letter)
+        for prefix in rules.prefixes:
+            for word in prefix.not_in:
+                self.assertIn(prefix.text, word, word)
         for unit in rules.jinkim_articles:
             self.assertEqual(unit[0] + "\u0300", unit, unit)
             self.assertIn(unit[0], rules.articles, unit)

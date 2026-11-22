@@ -11,6 +11,9 @@ Slot = frozenset[str] | str
 class Prefix:
     text: str
     followed_by: tuple[Slot, ...] = ()
+    anywhere: bool = False
+    not_in: tuple[str, ...] = ()
+    only_after: bool = False
 
 
 @dataclass(frozen=True)
@@ -42,11 +45,18 @@ def load(path: Path = DEFAULT_RULES) -> Rules:
         carry_a_vowel=frozenset(data["letters"].get("carry_a_vowel", ())),
         syllabic=frozenset(data["syllabic"]["units"]),
         prefixes=tuple(
-            Prefix(p["text"], tuple(_slot(s) for s in p.get("followed_by", ()))) for p in data["prefix"]
+            Prefix(
+                p["text"],
+                tuple(_slot(s) for s in p.get("followed_by", ())),
+                p.get("anywhere", False),
+                tuple(p.get("not_in", ())),
+                p.get("only_after", False),
+            )
+            for p in data["prefix"]
         ),
         articles=frozenset(data.get("articles", {}).get("letters", ())),
         jinkim_articles=frozenset(data.get("articles", {}).get("with_jinkim", ())),
-        onsets=frozenset(entry["pair"] for entry in data.get("onsets", [])),
+        onsets=frozenset(pair for entry in data.get("onsets", []) for pair in entry["pairs"]),
         lone_consonants=data.get("lone_consonants", {}).get("allowed", True),
         min_before=minimums["before"],
         min_before_syllable=minimums["before_syllable"],

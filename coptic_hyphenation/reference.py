@@ -33,10 +33,15 @@ class Hyphenator:
     def __init__(self, rules: Rules | None = None):
         self.rules = rules or default_rules()
         self._prefixes = sorted(
-            ((units(p.text), p.followed_by) for p in self.rules.prefixes),
+            ((units(p.text), p.followed_by, [units(e) for e in p.not_in]) for p in self.rules.prefixes if not p.anywhere),
             key=lambda entry: len(entry[0]),
             reverse=True,
         )
+        self._inner = [
+            (units(p.text), p.followed_by, [units(e) for e in p.not_in], p.only_after)
+            for p in self.rules.prefixes
+            if p.anywhere
+        ]
 
     def kind(self, unit: str) -> str:
         lower = unit.lower()
@@ -45,6 +50,17 @@ class Hyphenator:
         if lower[0] in self.rules.vowels:
             return "vowel"
         return "consonant"
+
+    @staticmethod
+    def _covered(lower: list[str], exceptions, size: int) -> set[int]:
+        n = len(lower)
+        return {
+            k
+            for e in exceptions
+            for j in range(n - len(e) + 1)
+            if lower[j : j + len(e)] == e
+            for k in range(j, j + len(e) - size + 1)
+        }
 
     @staticmethod
     def _matches(lower: list[str], kinds: list[str], start: int, slots) -> bool:
@@ -76,8 +92,10 @@ class Hyphenator:
                 after_article.add(i + 1)
 
         prefix_length = 0
-        for prefix, followed_by in self._prefixes:
+        for prefix, followed_by, exceptions in self._prefixes:
             size = len(prefix)
+            if 0 in self._covered(lower, exceptions, size):
+                continue
             if n > size and lower[:size] == prefix and self._matches(lower, kinds, size, followed_by):
                 prefix_length = size
                 standalone.add(prefix_length)
@@ -86,6 +104,17 @@ class Hyphenator:
         hosts = {i + 1 for i, kind in enumerate(kinds) if kind == "syllable"}
         if prefix_length:
             hosts.add(prefix_length)
+        inside_prefix: set[int] = set()
+        for prefix, followed_by, exceptions, only_after in self._inner:
+            size = len(prefix)
+            excluded = self._covered(lower, exceptions, size)
+            for i in range(n - size):
+                if i in excluded:
+                    continue
+                if lower[i : i + size] == prefix and self._matches(lower, kinds, i + size, followed_by):
+                    standalone |= {i + size} if only_after else {i, i + size}
+                    hosts.add(i + size)
+                    inside_prefix |= set(range(i + 1, i + size))
         held: set[int] = set()
         for h in hosts:
             if h + 1 < n and kinds[h] == kinds[h + 1] == "consonant" and lower[h] in r.articles:
@@ -113,7 +142,11 @@ class Hyphenator:
             i = end
 
         breaks = {b for b in standalone if b >= r.min_before_syllable}
-        breaks |= {b for b in onset_rule if b >= r.min_before and b >= prefix_length and b not in held}
+        breaks |= {
+            b
+            for b in onset_rule
+            if b >= r.min_before and b >= prefix_length and b not in held and b not in inside_prefix
+        }
         breaks = {b for b in breaks if n - b >= r.min_after and b not in after_article}
         if not r.lone_consonants:
             breaks = self._join_lone_consonants(lower, kinds, hosts, breaks)

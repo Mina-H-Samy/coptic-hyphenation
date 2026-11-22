@@ -91,10 +91,168 @@ meaning = "possessive article, our (feminine)"
 text = "ⲛⲉⲛ"
 meaning = "possessive article, our (plural)"
 
+# ⲙⲉⲧ, the prefix of abstract nouns, is a syllable of its own wherever it
+# stands, before a consonant or a vowel (decided 2026-11-22): ⲉϯ-ⲙⲉⲧ-ⲣⲱⲙⲓ,
+# ϯ-ⲙⲉⲧ-ⲟⲩⲣⲟ, ⲟⲩ-ⲙⲉⲧ-ⲁⲧ-ⲥⲃⲱ. It wins over the article rule: ⲛ̀-ϯ-ⲙⲉⲑ-ⲙⲏⲓ.
+# Before a consonant it may be written ⲙⲉⲑ (ⲙⲉⲑⲙⲏⲓ, ⲙⲉⲑⲛⲟⲩϫ). "anywhere" means
+# it detaches inside a word as well as at its start; "not_in" lists the words
+# where the same letters are not the prefix, which break by syllable as before.
+[[prefix]]
+text = "ⲙⲉⲧ"
+meaning = "prefix of abstract nouns (-ness, -hood)"
+anywhere = true
+not_in = [
+    "ⲙⲉⲧⲁⲛⲟⲓ", "ⲙⲉⲧⲁⲛⲓ",                      # μετάνοια, μετανοεῖν
+    "ⲙⲉⲧⲁⲗⲩⲙ", "ⲙⲉⲧⲁⲗⲏⲙ", "ⲙⲉⲧⲁⲗⲏⲯ",          # μετάλημψις
+    "ⲙⲉⲧⲁⲗⲁⲃ", "ⲙⲉⲧⲁⲗⲁⲙ",                     # μεταλαμβάνω
+    "ⲙⲉⲧⲁⲃⲟⲗ",                                # μεταβόλος
+    "ⲙⲉⲧⲁⲗⲗ", "ⲙⲉⲧⲁⲗⲓⲟⲛ",                     # μέταλλον
+    "ⲙⲉⲧⲁⲥⲭ", "ⲙⲉⲧⲟⲭ",                        # μετασχεῖν, μέτοχος
+    "ⲙⲉⲧⲁⲥⲟⲩ",                                # μετὰ σοῦ
+    "ⲏⲙⲉⲧⲉⲣ",                                 # ἡμέτερος
+    "ⲙⲉⲧⲣⲓⲧ", "ⲙⲉⲧⲣⲟⲡ", "ⲙⲉⲧⲣⲟⲛ", "ⲥⲩⲙⲙⲉⲧⲣ",  # μετρητής, ἀμέτρητος, μητρόπολις, μέτρον
+    "ⲙⲉⲧⲁⲃⲉⲏⲗ", "ⲇⲟⲙⲉⲧⲓ", "ⲉⲛⲉⲙⲉⲧⲓ",          # the names Mehetabel, Domitius, Anamim
+]
+
+[[prefix]]
+text = "ⲙⲉⲑ"
+meaning = "ⲙⲉⲧ written before a consonant"
+anywhere = true
+followed_by = ["consonant"]
+
+# The possessive articles with a one-consonant possessor (your, his, her)
+# before a consonant: the possessor goes with the article, wherever the article
+# stands, and the onset rule makes no break inside it (decided 2026-11-22):
+# ⲡⲉⲕ-ⲗⲁⲟⲥ, ⲙ̀-ⲡⲉⲥ-ⲃⲓⲟⲥ, ⲛ̀-ⲛⲉⲥ-ⲡⲩⲗⲏ. "only_after" means a break may fall after
+# it but none is added before it: the same letters end the relative ⲉⲧⲉ- with
+# a pronoun (ⲉⲧⲉϥ-ⲛⲁ-ⲑⲁ-ⲙⲓⲟϥ), where a break before ⲧ would be wrong.
+[[prefix]]
+text = "ⲡⲉⲕ"
+meaning = "possessive article, your (masculine singular)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲡⲉϥ"
+meaning = "possessive article, his"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲡⲉⲥ"
+meaning = "possessive article, her"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+not_in = ["ⲝⲁⲡⲉⲥⲧ"]                           # ἐξαπέστειλε
+
+[[prefix]]
+text = "ⲧⲉⲕ"
+meaning = "possessive article, your (feminine possessed)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲧⲉϥ"
+meaning = "possessive article, his (feminine possessed)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲧⲉⲥ"
+meaning = "possessive article, her (feminine possessed)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲛⲉⲕ"
+meaning = "possessive article, your (plural possessed)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲛⲉϥ"
+meaning = "possessive article, his (plural possessed)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲛⲉⲥ"
+meaning = "possessive article, her (plural possessed)"
+anywhere = true
+only_after = true
+followed_by = ["consonant"]
+not_in = ["ⲁⲛⲉⲥⲧⲏ"]                           # ἀνέστη
+
+# A conjugation base with the pronoun ⲕ or ⲥ at the start of a word, before a
+# consonant: the pronoun stays with its base (decided 2026-11-22): ⲁⲕ-ⲗⲉⲥ,
+# ⲁⲥ-ⲧⲱⲛⲥ, ⲉⲧⲁⲥ-ⲕⲏⲛ. Greek words that open with the same letters are listed in
+# "not_in" and break as before.
+[[prefix]]
+text = "ⲁⲕ"
+meaning = "past (perfect) base + you (masculine)"
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲁⲥ"
+meaning = "past (perfect) base + she"
+followed_by = ["consonant"]
+not_in = ["ⲁⲥⲧⲏⲣ", "ⲁⲥⲧⲉⲣ", "ⲁⲥⲧⲣ", "ⲁⲥⲕⲏⲧ", "ⲁⲥⲕⲟⲥ", "ⲁⲥⲡⲁⲍ", "ⲁⲥⲡⲁⲥ", "ⲁⲥⲕⲁⲗⲱⲛ"]  # ἀστήρ, ἄστρον, ἀσκητής, ἀσκός, ἀσπάζομαι, ἀσπασμός, Ἀσκάλων
+
+[[prefix]]
+text = "ⲉⲕ"
+meaning = "circumstantial base + you (masculine)"
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲉⲥ"
+meaning = "circumstantial base + she"
+followed_by = ["consonant"]
+not_in = ["ⲉⲥⲡⲁⲣ", "ⲉⲥⲡⲉⲣ", "ⲉⲥⲧⲉⲫ", "ⲉⲥⲧⲓⲛ"]  # ἑσπέρα, ἐστεφάνωσας, ἐστιν
+
+[[prefix]]
+text = "ϣⲁⲕ"
+meaning = "aorist base + you (masculine)"
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ϣⲁⲥ"
+meaning = "aorist base + she"
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲛⲁⲕ"
+meaning = "imperfect base, or the preposition ⲛⲁ=, + you (masculine)"
+followed_by = ["consonant"]
+not_in = ["ⲛⲁⲕⲗⲏⲣ"]                           # κλῆρος after ⲛⲁ
+
+[[prefix]]
+text = "ⲛⲁⲥ"
+meaning = "imperfect base, or the preposition ⲛⲁ=, + she"
+followed_by = ["consonant"]
+not_in = ["ⲛⲁⲥⲕⲏⲧ", "ⲛⲁⲥⲕⲩⲧ"]                # ἀσκητής, Σκύθης after ⲛ
+
+[[prefix]]
+text = "ⲉⲧⲁⲕ"
+meaning = "relative past base + you (masculine)"
+followed_by = ["consonant"]
+
+[[prefix]]
+text = "ⲉⲧⲁⲥ"
+meaning = "relative past base + she"
+followed_by = ["consonant"]
+
 # One-letter articles. When the consonants after a word-initial syllabic unit
 # or prefix begin with one of these, they all go with the next syllable: the
 # article stays with its noun (ⲙ̀-ⲫⲛⲟⲩϯ, ⲙ̀-ⲡϭⲟⲓⲥ, ⲉ̀-ⲡϣⲱⲓ), and the onset rule
-# makes no break among them (ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ). Decided 2026-11-20, ϯ included
+# makes no break among them (ⲛ̀-ϯⲡⲁⲣ-ⲑⲉ-ⲛⲟⲥ). Decided 2026-11-20, ϯ included
 # although it carries its own vowel.
 #
 # An article written with a jinkim carries its own vowel, so it is never left
@@ -117,51 +275,67 @@ with_jinkim = ["ⲡ̀", "ⲫ̀", "ⲧ̀", "ⲑ̀"]
 # here, otherwise only the last one: ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ, ⲁⲗ-ⲗⲏ-ⲗⲟⲩⲓⲁ. A consonant
 # carrying a mark is never part of a listed pair.
 #
-# The list was started from nothing on 2026-11-20. A pair is listed only when
-# it has been decided (status "decided"), or when a case pinned in
-# tests/cases.txt needs it (status "pinned", still to be confirmed).
+# The list was started from nothing on 2026-11-20 and decided on 2026-11-22
+# from where Coptic SCRIPTORIUM divides the morphemes (SPEC.md, section 4,
+# R4): a pair is listed when at least three quarters of the words that hold
+# it want it together. Status "pinned" marks a pair kept for a case in
+# tests/cases.txt and not yet decided. A pair that is not listed is apart.
 
 [[onsets]]
-pair = "ⲭⲣ"
-status = "pinned"
-case = "ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ"
-why = "ⲭ is one sound (kh) and takes a liquid as ⲕ does."
+pairs = ["ⲡⲕ", "ⲡϫ", "ⲡϭ", "ⲡϩ", "ⲡϧ", "ⲡⲭ", "ⲡⲑ", "ⲫⲛ", "ⲫⲃ", "ⲫⲣ", "ⲧⲫ"]
+status = "decided"
+why = "The first letter is the article ⲡ, ⲫ or ⲧ, which goes with its noun (D1)."
+cases = ["ⲙ̀-ⲫⲣⲏϯ", "ⲉⲣⲉ-ⲡϭⲟⲓⲥ", "ϩⲓ-ⲧⲉⲛ-ⲧⲫⲉ"]
 
 [[onsets]]
-pair = "ⲥⲧ"
-status = "pinned"
-case = "ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ"
+pairs = [
+    "ϯⲃ", "ϯⲅ", "ϯⲇ", "ϯⲕ", "ϯⲗ", "ϯⲙ", "ϯⲛ", "ϯⲡ", "ϯⲣ", "ϯⲥ",
+    "ϯⲧ", "ϯⲫ", "ϯⲭ", "ϯⲯ", "ϯϣ", "ϯϧ", "ϯϩ", "ϯϫ", "ϯϭ",
+]
+status = "decided"
+why = """
+ϯ always goes with what follows: the article (decided 2026-11-20), and also
+the pronoun ϯ- "I" and the verb ϯ "give", which a pattern cannot tell apart
+from it; these only lose the break after ϯ (ⲉϯⲛⲁϣⲉ)."""
+cases = ["ⲁⲩ-ϯϩⲟ", "ⲁϥ-ϯⲙⲁϯ", "ⲁⲩ-ϯⲧⲟⲧϥ"]
 
 [[onsets]]
-pair = "ⲡⲛ"
-status = "pinned"
-case = "ⲡⲓ-ⲡⲛⲉⲩⲙⲁ"
+pairs = [
+    "ⲑⲣ", "ⲥⲃ", "ⲥϧ", "ϣⲃ", "ϣⲗ", "ϣⲑ", "ϣⲧ", "ϣⲫ", "ϣϥ", "ϣϭ",
+    "ϩⲃ", "ϩⲑ", "ϩⲕ", "ϩⲣ", "ϫⲫ", "ϭⲗ", "ϭⲣ", "ⲙⲑ",
+]
+status = "decided"
+why = """
+Native stems begin with these: the causative ⲑⲣⲉ-, ⲥⲃⲱ, ⲥϧⲁⲓ, ϣⲃⲱⲧ, ϣⲗⲏⲗ,
+ϣⲑⲟⲣⲧⲉⲣ, the negative ϣⲧⲉⲙ-, ϣⲫⲏⲣ, ϣϥⲁⲓ, ϣϭⲟⲣ, ϩⲃⲏⲟⲩⲓ, ϩⲑⲟ, ϩⲕⲟ, ϩⲣⲁ=,
+ϫⲫⲟ, ϭⲗⲟϫ, ϭⲣⲟ, ⲙⲑⲟ."""
+cases = ["ⲉⲧⲁϥ-ⲑⲣⲉ", "ⲛⲉⲕ-ϣⲫⲏⲣ", "ⲁϥ-ⲥϧⲁⲓ", "ⲁϥ-ϫⲫⲉ", "ⲁⲩ-ϭⲣⲟ", "ⲧⲉ-ⲧⲉⲛ-ϣⲧⲉ-ⲙⲉⲣ-ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ"]
 
 [[onsets]]
-pair = "ϣⲧ"
-status = "pinned"
-case = "ⲧⲉ-ⲧⲉⲛ-ϣⲧⲉ-ⲙⲉⲣ-ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ"
-why = "ϣⲧⲉⲙ- is the negative infinitive prefix, so ϣⲧ opens words."
+pairs = ["ⲡⲣ", "ⲡⲗ", "ⲡⲛ", "ⲕⲗ", "ⲭⲣ", "ⲭⲗ", "ⲇⲣ", "ⲅⲛ", "ⲥⲡ"]
+status = "decided"
+why = """
+A Greek word can begin with these (πρ, πλ, πν, κλ, χρ, χλ, δρ, γν, σπ), and
+in Coptic they stand almost only inside Greek words."""
+cases = ["ⲡⲓ-ⲡⲣⲟ-ⲫⲏ-ⲧⲏⲥ", "ⲡⲓ-ⲡⲛⲉⲩⲙⲁ", "ϯ-ⲉⲕ-ⲕⲗⲏ-ⲥⲓⲁ", "ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ", "ⲁⲛ-ⲇⲣⲉⲁⲥ"]
 
 [[onsets]]
-pair = "ⲥⲕ"
+pairs = ["ⲥⲧ", "ⲥⲕ"]
 status = "pinned"
-case = "ⲧⲉ-ⲧⲉⲛ-ϣⲧⲉ-ⲙⲉⲣ-ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ"
-
-[[onsets]]
-pair = "ⲫⲣ"
-status = "pinned"
-case = "ⲙ̀-ⲫⲣⲏϯ"
-why = "Keeps the article ⲫ with its noun ⲣⲏϯ."
+why = """
+These depend on the word: Greek words keep them together (ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ,
+ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ), native ones do not (ⲁⲓ-ⲙⲉⲥ-ⲧⲉ, the pronoun in ⲁⲥ-ⲧⲱⲛⲥ).
+Kept together until rules that look at the word decide them."""
+cases = ["ⲡⲓ-ⲭⲣⲓ-ⲥⲧⲟⲥ", "ⲧⲉ-ⲧⲉⲛ-ϣⲧⲉ-ⲙⲉⲣ-ⲥⲕⲁⲛ-ⲇⲁ-ⲗⲓ-ⲍⲉⲥⲑⲉ"]
 
 # No piece between two breaks may be left without a vowel: a vowel, a
 # syllabic unit, or a letter that carries one, ϯ or an article with a jinkim
-# (decided 2026-11-20). When the
-# other rules would leave consonants alone, a break is dropped: they join what
-# follows when they come after a prefix or a syllabic unit, since that is the
-# start of a stem (ⲡⲓ-ϣⲗⲟⲗ, ⲛ̀-ⲕⲣⲓ-ⲧⲏⲥ), and otherwise what precedes, since that
-# is the end of a word part such as a pronoun (ⲡⲉϥ-ⲙ̀-ⲃⲟⲛ, ⲉⲣⲉ-ⲧⲉⲛ-ⲉ̀-ϣⲱⲧ). At
-# the start or the end of a word they join the only side there is.
+# (decided 2026-11-20). When the other rules would leave consonants alone, a
+# break is dropped: they join what follows when they come after a prefix or a
+# syllabic unit, since that is the start of a stem (ⲡⲓ-ϣⲗⲟⲗ, ⲛ̀-ⲕⲣⲓ-ⲧⲏⲥ), and
+# otherwise what precedes, since that is the end of a word part such as a
+# pronoun (ⲡⲉϥ-ⲙ̀-ⲃⲟⲛ, ⲉⲣⲉ-ⲧⲉⲛ-ⲉ̀-ϣⲱⲧ). At the start or the end of a word they
+# join the only side there is.
 [lone_consonants]
 allowed = false
 

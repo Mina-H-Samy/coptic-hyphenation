@@ -5,7 +5,8 @@ specification, kept as data, and turned into the TeX pattern file that TeX,
 Typst and other software use to hyphenate.
 
 **Status: version 1, work in progress.** The list of consonant pairs that stay
-together is being rebuilt from nothing.
+together has been rebuilt from nothing; 49 pairs whose answer depends on the
+word are still open.
 [SPEC.md](SPEC.md) describes the rules, the problems found so far and the
 decisions still open. There is no pattern file yet.
 
