@@ -69,6 +69,11 @@ class Hyphenator:
         for i, kind in enumerate(kinds):
             if kind == "syllable":
                 standalone |= {i, i + 1}
+        after_article: set[int] = set()
+        for i, unit in enumerate(lower):
+            if unit in r.jinkim_articles:
+                standalone.add(i)
+                after_article.add(i + 1)
 
         prefix_length = 0
         for prefix, followed_by in self._prefixes:
@@ -109,13 +114,14 @@ class Hyphenator:
 
         breaks = {b for b in standalone if b >= r.min_before_syllable}
         breaks |= {b for b in onset_rule if b >= r.min_before and b >= prefix_length and b not in held}
-        breaks = {b for b in breaks if n - b >= r.min_after}
+        breaks = {b for b in breaks if n - b >= r.min_after and b not in after_article}
         if not r.lone_consonants:
             breaks = self._join_lone_consonants(lower, kinds, hosts, breaks)
         return breaks
 
     def _has_vowel(self, lower: list[str], kinds: list[str]) -> bool:
-        return any(k != "consonant" or u in self.rules.carry_a_vowel for u, k in zip(lower, kinds))
+        carriers = self.rules.carry_a_vowel | self.rules.jinkim_articles
+        return any(k != "consonant" or u in carriers for u, k in zip(lower, kinds))
 
     def _join_lone_consonants(self, lower, kinds, hosts, breaks: set[int]) -> set[int]:
         n = len(lower)

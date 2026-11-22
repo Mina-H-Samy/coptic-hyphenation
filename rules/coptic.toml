@@ -31,10 +31,11 @@ carry_a_vowel = ["ϯ"]
 # Units that are a syllable by themselves. The jinkim (U+0300) marks one: on ⲙ
 # and ⲛ a syllabic sonorant (ⲙ̀-ⲫⲣⲏϯ, ⲛ̀-ⲥⲏⲟⲩ), on ⲉ a vowel standing alone
 # (ⲉ̀-ⲡϣⲱⲓ, ⲉ̀-ⲃⲟⲗ, ⲁϥ-ⲉ̀ⲙⲓ), on ϣ a consonant with the vowel before it
-# (ⲁϥ-ϣ̀-ⲧⲉⲙ-ϫⲓⲙⲓ). ⲉ̀ and ϣ̀ added 2026-11-20. A break may fall on either side
-# of one, even when that leaves one unit before the break. Whether the jinkim
-# on other letters (ⲓ̀, ⲁ̀, ⲡ̀ ...) does the same is still open.
-units = ["ⲙ̀", "ⲛ̀", "ⲉ̀", "ϣ̀"]
+# (ⲁϥ-ϣ̀-ⲧⲉⲙ-ϫⲓⲙⲓ). ⲉ̀ and ϣ̀ added 2026-11-20, ⲓ̀ and ⲁ̀ 2026-11-22 (ⲁϥ-ⲓ̀ⲛⲓ,
+# ⲡⲉϥ-ⲁ̀-ϣⲁⲓ, ⲁ̀-ⲛⲟⲕ). A break may fall on either side of one, even when that
+# leaves one unit before the break. On any other letter the jinkim is a plain
+# mark (decided 2026-11-22): ⲙⲱⲩ̀-ⲥⲏⲥ, ⲥ̀ⲛⲟⲩϯ. On an article, see [articles].
+units = ["ⲙ̀", "ⲛ̀", "ⲉ̀", "ϣ̀", "ⲓ̀", "ⲁ̀"]
 
 # Prefixes that detach when a word begins with one. Only the longest match
 # counts, and no break from the onset rule falls inside it: ⲡⲉⲛ-ⲓⲱⲧ, never
@@ -95,8 +96,13 @@ meaning = "possessive article, our (plural)"
 # article stays with its noun (ⲙ̀-ⲫⲛⲟⲩϯ, ⲙ̀-ⲡϭⲟⲓⲥ, ⲉ̀-ⲡϣⲱⲓ), and the onset rule
 # makes no break among them (ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ). Decided 2026-11-20, ϯ included
 # although it carries its own vowel.
+#
+# An article written with a jinkim carries its own vowel, so it is never left
+# alone. A break may fall before it, never after it: it stays with its noun as
+# the others do (decided 2026-11-22). ϫⲉⲙ-ⲡ̀ϣⲓⲛⲓ, ⲙ̀-ⲫ̀ⲣⲏϯ, and ⲡ̀ϭⲟⲓⲥ unbroken.
 [articles]
 letters = ["ⲡ", "ⲫ", "ⲧ", "ⲑ", "ϯ"]
+with_jinkim = ["ⲡ̀", "ⲫ̀", "ⲧ̀", "ⲑ̀"]
 
 # A consonant that is a morpheme by itself: how it is divided (D1). The names
 # are Coptic SCRIPTORIUM's parts of speech. Articles are carried out by [articles]; a
@@ -149,7 +155,8 @@ case = "ⲙ̀-ⲫⲣⲏϯ"
 why = "Keeps the article ⲫ with its noun ⲣⲏϯ."
 
 # No piece between two breaks may be left without a vowel: a vowel, a
-# syllabic unit, or a letter that carries one (decided 2026-11-20). When the
+# syllabic unit, or a letter that carries one, ϯ or an article with a jinkim
+# (decided 2026-11-20). When the
 # other rules would leave consonants alone, a break is dropped: they join what
 # follows when they come after a prefix or a syllabic unit, since that is the
 # start of a stem (ⲡⲓ-ϣⲗⲟⲗ, ⲛ̀-ⲕⲣⲓ-ⲧⲏⲥ), and otherwise what precedes, since that

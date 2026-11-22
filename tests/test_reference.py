@@ -83,6 +83,7 @@ class NoLoneConsonants(unittest.TestCase):
             self.assertEqual(word, h.hyphenate(word).replace(SOFT_HYPHEN, ""))
             for offset in h.word_breaks(word):
                 self.assertNotEqual("Mn", unicodedata.category(word[offset]), word)
+                self.assertNotIn(word[offset - 2:offset].lower(), h.rules.jinkim_articles, word)
 
 
 class RulesFile(unittest.TestCase):
@@ -98,6 +99,10 @@ class RulesFile(unittest.TestCase):
         self.assertEqual(len(rules.prefixes), len(set(rules.prefixes)))
         for letter in rules.articles:
             self.assertEqual("consonant", h.kind(letter), letter)
+        for unit in rules.jinkim_articles:
+            self.assertEqual(unit[0] + "\u0300", unit, unit)
+            self.assertIn(unit[0], rules.articles, unit)
+            self.assertNotIn(unit, rules.syllabic, unit)
 
 
 if __name__ == "__main__":

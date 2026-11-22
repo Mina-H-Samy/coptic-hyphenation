@@ -4,7 +4,8 @@
 work started from. Version 1 starts the onset list again from nothing and adds
 the decisions of 2026-11-20: ⲉ̀ and ϣ̀ as syllabic units, the prefix ⲉ before an
 article, the article rule (R3) and the rule that no piece is left without a
-vowel (R6). It is not yet the proposed standard: section 7 lists the decisions
+vowel (R6); and of 2026-11-22: ⲓ̀ and ⲁ̀ as syllabic units, and an article
+written with a jinkim kept with its noun. It is not yet the proposed standard: section 7 lists the decisions
 still open, and section 6 the problems they have to settle.
 
 The rules themselves are data, in [`rules/coptic.toml`](rules/coptic.toml).
@@ -34,20 +35,24 @@ Orthodox Church. Other dialects are an open decision (D6).
 
 - A **vowel** is a unit whose letter is ⲁ, ⲉ, ⲏ, ⲓ, ⲟ, ⲩ or ⲱ.
 - A **syllabic unit** is a syllable by itself: ⲙ̀ or ⲛ̀ (a syllabic sonorant),
-  ⲉ̀ (a vowel standing alone) and ϣ̀ (ϣ with the vowel before it). The jinkim
-  marks all four.
+  ⲉ̀, ⲓ̀ or ⲁ̀ (a vowel standing alone) and ϣ̀ (ϣ with the vowel before it). The
+  jinkim marks all six. On any other letter the jinkim is a plain mark, except
+  on an article (below).
 - A **consonant** is every other unit, ϯ included.
 - A **nucleus** is a vowel or a syllabic unit. ϯ is a consonant for R4, but
   carries its own vowel ("ti"), so a piece holding it is never vowelless (R6).
 - A **one-letter article** is ⲡ, ⲫ, ⲧ, ⲑ or ϯ. ϯ carries its own vowel, but
   is treated like the others (decided 2026-11-20).
+- A **jinkim article** is ⲡ̀, ⲫ̀, ⲧ̀ or ⲑ̀: an article written with a jinkim. It
+  carries its own vowel, as ϯ does, and is a consonant for R4 (decided
+  2026-11-22).
 
 ## 4. Rules
 
 **R1. Syllabic units.** A break may fall on either side of a syllabic unit.
 
 > ⲙ̀-ⲫⲣⲏϯ, ⲛ̀-ⲥⲏⲟⲩ, ⲛ̀-ⲟⲩⲱⲧ, ⲛ̀-ⲧⲉϥⲭⲁ, ⲉ̀-ⲃⲟⲗ, ⲁϥ-ⲉ̀ⲙⲓ, ⲁϥ-ϣ̀-ⲧⲉⲙ-ϫⲓⲙⲓ,
-> ϣ̀-ϫⲟⲙ
+> ϣ̀-ϫⲟⲙ, ⲁϥ-ⲓ̀ⲛⲓ, ⲛ̀-ⲛⲉϥ-ⲓ̀ⲃⲓ, ⲁ̀-ⲛⲟⲕ, ⲡⲉϥ-ⲁ̀-ϣⲁⲓ; but ⲙⲱⲩ̀-ⲥⲏⲥ, ⲥ̀ⲛⲟⲩϯ
 
 **R2. Prefixes.** If a word begins with one of the prefixes in the rules file
 (ⲡⲓ, ϯ, ⲛⲓ, ⲟⲩ, ϩⲁⲛ, ⲫⲏ, ⲛⲏ, ⲡⲉⲛ, ⲧⲉⲛ, ⲛⲉⲛ) and more follows, a break may
@@ -76,6 +81,11 @@ The same position also holds the start of a stem, and the rule keeps that whole
 too: ⲟⲩ-ⲧϩⲉⲙⲕⲟ, ⲛⲓ-ⲧⲣⲁ-ⲡⲉⲍⲁ, ⲉ̀-ⲑⲣⲉϥ-ⲥⲉⲙⲓ. For ⲡ, ⲫ, ⲧ and ⲑ, R6 alone would
 give the same result; R3 is what keeps ϯ with its noun.
 
+A jinkim article stays with its noun wherever it stands: a break may fall
+before it, with one unit before the break as for R1, but never after it.
+
+> ϫⲉⲙ-ⲡ̀ϣⲓⲛⲓ, ⲙ̀-ⲫ̀ⲣⲏϯ, ⲙ̀-ⲡ̀ⲕⲁϩⲓ; ⲡ̀ϭⲟⲓⲥ and ⲡ̀ⲟⲩⲣⲟ have no break
+
 **R4. Onsets.** Where one or more consonants stand between two nuclei, one break
 falls among them. A single consonant goes to the next syllable. Of two or
 more, the next syllable takes the last two if they are a listed onset pair,
@@ -100,12 +110,12 @@ never part of an onset.
 > ⲛⲉⲙ, ⲁⲙⲏⲛ and ⲉⲑⲟⲩⲁⲃ have no break; ⲛⲓ-ⲉ-ⲛⲉϩ and ⲫⲏ-ⲉ-ⲑⲟⲩⲁⲃ do.
 
 **R6. No lone consonants.** No piece between two breaks may be left without a
-nucleus (or a letter that carries a vowel, ϯ). Where the rules above would leave
-consonants alone, a break is dropped. Consonants that come after a prefix or a
-syllabic unit join what follows, as the start of a stem; any others join what
-precedes, as the end of a word part such as a pronoun. At either end of a word
-they join the only side there is. A word with no nucleus at all (a numeral, an
-abbreviation such as ⲡⲭ︦ⲥ︦) has no break.
+nucleus (or a letter that carries a vowel: ϯ or a jinkim article). Where the
+rules above would leave consonants alone, a break is dropped. Consonants that
+come after a prefix or a syllabic unit join what follows, as the start of a
+stem; any others join what precedes, as the end of a word part such as a
+pronoun. At either end of a word they join the only side there is. A word with
+no nucleus at all (a numeral, an abbreviation such as ⲡⲭ︦ⲥ︦) has no break.
 
 > ⲡⲓ-ϣⲗⲟⲗ, ⲛ̀-ⲕⲣⲓ-ⲧⲏⲥ, ⲡⲓ-ⲥⲧⲣⲁ-ⲧⲏ-ⲗⲁ-ⲧⲏⲥ; ⲡⲉϥ-ⲙ̀-ⲃⲟⲛ, ⲉⲣⲉ-ⲧⲉⲛ-ⲉ̀-ϣⲱⲧ,
 > ⲙ̀-ⲡⲣⲉⲙ-ⲛ̀-ⲭⲏⲙⲓ
@@ -156,11 +166,13 @@ break by syllable: ⲙⲉ-ⲧⲟⲩⲣⲟ (morphemes ⲙⲉⲧ-ⲟⲩⲣⲟ), �
 **P4. Greek loanwords.** Greek onsets such as ⲫⲑ, ⲥⲫ, ⲥⲭ, ⲅⲛ are missing,
 and R4 never keeps three consonants together, so ⲁⲣⲓⲥⲫⲣⲁⲅⲓⲍⲓⲛ breaks as
 ⲁⲣⲓⲥ-ⲫⲣⲁ-ⲅⲓ-ⲍⲓⲛ, where both the Greek division and the morphemes (ⲁⲣⲓ +
-σφραγίζειν) give ⲁⲣⲓ-ⲥⲫⲣⲁ….
+σφραγίζειν) give ⲁⲣⲓ-ⲥⲫⲣⲁ…. The jinkim on a Greek word's first vowel is a
+spelling convention, not a syllable of its own, but R1 cannot tell: ⲧⲁ̀ⲣⲭⲏ
+(the article + ἀρχή) breaks as ⲧⲁ̀-ⲣⲭⲏ, where the Greek is ἀρ-χή.
 
 **P5. The jinkim on other letters.** Version 0 made only ⲙ̀ and ⲛ̀ syllabic
 units, but in the private corpus the jinkim also stands on ⲉ (in 6,678 distinct
-words), ϣ (567), ⲓ (240), ⲁ (43), ⲡ (35) and others. ⲉ̀ and ϣ̀ are now decided
+words), ϣ (567), ⲓ (240), ⲁ (43), ⲡ (35) and others. *Settled 2026-11-22*
 (D2).
 
 **P6. Overlined words.** Abbreviations and numerals carry an overline across
@@ -182,9 +194,12 @@ noun, ϧⲉⲛⲛⲓϫⲟⲙ. The same rules have to give sensible breaks in bot
   (R3), ϯ included (ⲛ̀-ϯⲙⲉⲑ-ⲙⲏⲓ), and a one-letter subject pronoun with what
   precedes. Still open: the other kinds of lone letter (prepositions,
   negations, object pronouns).
-- **D2.** Is a letter with a jinkim always a syllable by itself (P5)? *Decided
-  2026-11-20 for ⲉ̀ and ϣ̀:* yes (R1). Still open for the other letters: ⲓ̀
-  (240 words), ⲁ̀ (43), ⲡ̀ (35) and the rest.
+- **D2.** Is a letter with a jinkim always a syllable by itself (P5)?
+  *Decided:* yes for ⲉ̀ and ϣ̀ (2026-11-20), and for ⲓ̀ and ⲁ̀ (2026-11-22), at
+  the cost of a Greek word such as ⲧⲁ̀-ⲣⲭⲏ (P4). On an article (ⲡ̀, ⲫ̀, ⲧ̀,
+  ⲑ̀) the jinkim keeps the article with its noun (R3). On the other letters,
+  all rare (ⲥ̀, ⲩ̀, ⲟ̀, ⲏ̀, ϥ̀ …, under 30 words in the private corpus), it is a
+  plain mark.
 - **D3.** Greek onsets (P4): for every word, or only for known loanwords? A
   pattern file cannot tell a loanword from a native word except by listing
   stems.

@@ -21,6 +21,7 @@ class Rules:
     syllabic: frozenset[str]
     prefixes: tuple[Prefix, ...]
     articles: frozenset[str]
+    jinkim_articles: frozenset[str]
     onsets: frozenset[str]
     lone_consonants: bool
     min_before: int
@@ -44,6 +45,7 @@ def load(path: Path = DEFAULT_RULES) -> Rules:
             Prefix(p["text"], tuple(_slot(s) for s in p.get("followed_by", ()))) for p in data["prefix"]
         ),
         articles=frozenset(data.get("articles", {}).get("letters", ())),
+        jinkim_articles=frozenset(data.get("articles", {}).get("with_jinkim", ())),
         onsets=frozenset(entry["pair"] for entry in data.get("onsets", [])),
         lone_consonants=data.get("lone_consonants", {}).get("allowed", True),
         min_before=minimums["before"],

@@ -92,3 +92,26 @@
 ⲉⲣⲉ-ⲧⲉⲛ-ⲉ̀-ϣⲱⲧ
 ⲙ̀-ⲡⲣⲉⲙ-ⲛ̀-ⲭⲏⲙⲓ
 ⲡⲓⲭⲣ︦ⲥ︦
+
+# Decided in this repository, 2026-11-22.
+# The jinkim makes ⲓ̀ and ⲁ̀ syllables by themselves too.
+ⲁϥ-ⲓ̀ⲛⲓ
+ⲙ̀-ⲡⲉⲣ-ⲓ̀ⲛⲓ
+ⲛ̀-ⲛⲉϥ-ⲓ̀ⲃⲓ
+ⲁ̀-ⲛⲟⲕ
+ⲁ̀-ⲙⲟⲩ
+ⲡⲉϥ-ⲁ̀-ϣⲁⲓ
+ⲉⲩ-ⲁ̀-ⲛⲁ-ⲥⲧⲁ-ⲥⲓⲥ
+# On any other letter it is a plain mark.
+ⲙⲱⲩ̀-ⲥⲏⲥ
+ⲥ̀ⲛⲟⲩϯ
+ⲧⲉⲕⲥ̀-ϩⲓⲙⲓ
+# An article with a jinkim stays with its noun: a break may fall before it,
+# never after it.
+ϫⲉⲙ-ⲡ̀ϣⲓⲛⲓ
+ⲁϥ-ϫⲉⲙ-ⲡ̀ϣⲓⲛⲓ
+ⲡ̀ϭⲟⲓⲥ
+ⲡ̀ⲥⲱ-ⲧⲏⲣ
+ⲙ̀-ⲫ̀ⲣⲏϯ
+ⲙ̀-ⲡ̀ⲕⲁϩⲓ
+ⲡ̀ⲟⲩⲣⲟ
